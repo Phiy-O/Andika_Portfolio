@@ -21,7 +21,7 @@ const socialIconMap = {
 
 export function HeroSection() {
   return (
-    <Section className="flex min-h-[100dvh] items-center py-20 md:py-28">
+    <Section className="flex min-h-[100dvh] items-center py-20 md:py-20">
       <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-7">
           <Reveal>
@@ -70,8 +70,8 @@ export function HeroSection() {
 
         <Reveal delay={0.08}>
           <div className="relative mx-auto w-full max-w-sm">
-            <div className="pointer-events-none absolute -left-4 bottom-8 z-20 flex h-16 w-16 items-center justify-center">
-              <img className="h-16 w-16" src="overlays/blog.png" alt="code-overlay" />
+            <div className="pointer-events-none absolute -rotate-8 left-4 bottom-8 z-20 flex h-16 w-16 items-center justify-center">
+              <img className="h-14 w-14" src="overlays/python.png" alt="code-overlay" />
             </div>
             <div className="pointer-events-none absolute right-1 top-12 z-20 flex h-16 w-16 items-center justify-center">
               <img className="h-16 w-16" src="overlays/code.png" alt="code-overlay" />

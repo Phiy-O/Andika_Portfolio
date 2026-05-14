@@ -10,11 +10,11 @@ export function FeaturedProjectsSection() {
     <Section className="pt-0">
       <SectionHeader
         eyebrow="Featured Projects"
-        title="Things I Build"
-        description="Selected projects that reflect my engineering style: clear architecture, strong UX, and practical outcomes."
+        title="Projects I Enjoy Building"
+        description="Selected works focused on clean architecture, delightful interaction, and practical product outcomes."
       />
 
-      <Stagger className="mt-8 grid gap-4 md:grid-cols-3">
+      <Stagger className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {featuredProjects.map((project) => (
           <Reveal key={project.title}>
             <ProjectCard {...project} />

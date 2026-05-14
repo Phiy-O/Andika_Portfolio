@@ -1,3 +1,4 @@
+import { FeaturedCertificatesSection } from "@/features/home/sections/FeaturedCertificatesSection";
 import { FeaturedProjectsSection } from "@/features/home/sections/FeaturedProjectsSection";
 import { HeroSection } from "@/features/home/sections/HeroSection";
 import { LatestBlogSection } from "@/features/home/sections/LatestBlogSection";
@@ -8,8 +9,9 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <FeaturedProjectsSection />
       <LatestBlogSection />
+      <FeaturedProjectsSection />
+      <FeaturedCertificatesSection />
       <SkillsSection />
       <PersonalitySection />
     </>

@@ -27,11 +27,11 @@ export const featuredProjects = [
     banner: "/window.svg",
   },
   {
-    title: "Certificate Timeline",
+    title: "Developer Toolkit",
     description:
-      "A minimalist achievement timeline with strong hierarchy, subtle motion, and calm visual rhythm.",
-    stack: ["UI Architecture", "Interaction", "Accessibility"],
-    demoUrl: "/certificates",
+      "A collection of reusable UI primitives and layout patterns for rapid product iteration.",
+    stack: ["Design System", "Interaction", "Accessibility"],
+    demoUrl: "/projects",
     githubUrl: "https://github.com/",
     banner: "/globe.svg",
   },
@@ -43,6 +43,30 @@ export const featuredProjects = [
     demoUrl: "/blog",
     githubUrl: "https://github.com/",
     banner: "/file.svg",
+  },
+];
+
+export const featuredCertificates = [
+  {
+    title: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    description: "Foundational cloud architecture and reliability principles.",
+    issuedAt: "Nov 2025",
+    href: "/certificates",
+  },
+  {
+    title: "Meta Front-End Developer Certificate",
+    issuer: "Meta",
+    description: "Frontend engineering fundamentals and project-based development.",
+    issuedAt: "Jul 2025",
+    href: "/certificates",
+  },
+  {
+    title: "Responsive Web Design",
+    issuer: "freeCodeCamp",
+    description: "Modern responsive layout systems and accessibility-first foundations.",
+    issuedAt: "Mar 2025",
+    href: "/certificates",
   },
 ];
 
@@ -78,6 +102,26 @@ export const skillsByCategory = [
   { title: "Backend", items: ["Node.js", "Express", "Prisma", "PostgreSQL"] },
   { title: "Tools", items: ["Git", "GitHub", "Figma", "VS Code", "Vercel"] },
   { title: "Creative", items: ["Pixel Art", "Creative Coding", "Visual Storytelling"] },
+];
+
+export const techStackMarqueeItems = [
+  { name: "Next.js", category: "Frontend", icon: "" },
+  { name: "React", category: "Frontend", icon: "" },
+  { name: "TypeScript", category: "Frontend", icon: "" },
+  { name: "Tailwind CSS", category: "Frontend", icon: "" },
+  { name: "Framer Motion", category: "Frontend", icon: "" },
+  { name: "Node.js", category: "Backend", icon: "" },
+  { name: "Express", category: "Backend", icon: "" },
+  { name: "Prisma", category: "Backend", icon: "" },
+  { name: "PostgreSQL", category: "Backend", icon: "" },
+  { name: "Git", category: "Tools", icon: "" },
+  { name: "GitHub", category: "Tools", icon: "" },
+  { name: "Figma", category: "Tools", icon: "" },
+  { name: "VS Code", category: "Tools", icon: "" },
+  { name: "Vercel", category: "Tools", icon: "" },
+  { name: "Pixel Art", category: "Creative", icon: "" },
+  { name: "Creative Coding", category: "Creative", icon: "" },
+  { name: "Visual Storytelling", category: "Creative", icon: "" },
 ];
 
 export const personalInterests = [
