@@ -1,13 +1,20 @@
 export const heroContent = {
-  eyebrow: "Creative Developer & CS Student",
-  title: "I build thoughtful web products and document the process.",
+  eyebrow: "Andika's Digital Space",
+  title: "I build things, share what I learn, and explore ideas in public.",
   intro:
-    "Hi, I'm Andika. I enjoy crafting clean frontend systems, shipping useful projects, and turning learning into public notes.",
+    "Hi, I'm Andika. This is my personal corner on the internet where I document projects, notes, experiments, and the creative process behind them.",
   ctas: [
     { label: "View Projects", href: "/projects", variant: "primary" as const },
     { label: "Read Blog", href: "/blog", variant: "outline" as const },
   ],
 };
+
+export const heroSocialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/" },
+  { label: "GitHub", href: "https://github.com/" },
+  { label: "Email", href: "mailto:hello@andika.dev" },
+  { label: "Instagram", href: "https://www.instagram.com/" },
+];
 
 export const featuredProjects = [
   {

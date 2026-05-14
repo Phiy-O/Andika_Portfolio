@@ -2,41 +2,65 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NAV_LINKS } from "@/constants/navigation";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { cn } from "@/utils/cn";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isLinkActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname.startsWith(href);
+  };
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between gap-4">
+      <Container className="grid h-16 grid-cols-[1fr_auto] items-center gap-4 md:grid-cols-[1fr_auto_1fr]">
         <Link
           href="/"
-          className="text-sm font-semibold tracking-wide text-primary"
+          className="justify-self-start text-sm font-semibold tracking-wide text-primary"
           onClick={() => setIsOpen(false)}
         >
-          andika.dev
+          <img className="h-16" src="images/letter-a-logo.png" alt="logo-andika" />
         </Link>
 
-        <nav className="hidden items-center gap-2 sm:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-md px-3 py-2 text-sm text-secondary transition-colors hover:bg-surface hover:text-primary"
+              className={cn(
+                "relative px-3 py-2 text-sm transition-colors after:absolute after:bottom-1 after:left-3 after:h-px after:w-[calc(100%-1.5rem)] after:origin-center after:scale-x-0 after:bg-zinc-300 after:transition-transform after:duration-300",
+                "hover:text-primary hover:drop-shadow-[0_0_8px_rgba(245,245,245,0.25)] hover:after:scale-x-100",
+                isLinkActive(link.href)
+                  ? "text-primary after:scale-x-100"
+                  : "text-secondary",
+              )}
+              onClick={() => setIsOpen(false)}
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
+        <div className="hidden justify-self-end md:block">
+          <Button size="sm" href="mailto:hello@andika.dev">
+            let&apos;s talk
+          </Button>
+        </div>
+
         <Button
           type="button"
           size="sm"
           variant="ghost"
-          className="sm:hidden"
+          className="md:hidden"
           aria-expanded={isOpen}
           aria-controls="mobile-nav"
           aria-label="Toggle navigation menu"
@@ -47,7 +71,7 @@ export function Navbar() {
       </Container>
 
       {isOpen ? (
-        <Container className="sm:hidden">
+        <Container className="md:hidden">
           <nav
             id="mobile-nav"
             aria-label="Mobile navigation"
@@ -57,12 +81,21 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-md px-3 py-2 text-sm text-secondary transition-colors hover:bg-surface hover:text-primary"
+                className={cn(
+                  "relative rounded-md px-3 py-2 text-sm transition-colors after:absolute after:bottom-1 after:left-3 after:h-px after:w-[calc(100%-1.5rem)] after:origin-left after:scale-x-0 after:bg-zinc-300 after:transition-transform after:duration-300",
+                  "hover:text-primary hover:after:scale-x-100",
+                  isLinkActive(link.href)
+                    ? "text-primary after:scale-x-100"
+                    : "text-secondary",
+                )}
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
+            <Button className="mt-2" href="mailto:hello@andika.dev">
+              let&apos;s talk
+            </Button>
           </nav>
         </Container>
       ) : null}
