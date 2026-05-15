@@ -1,10 +1,5 @@
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  EnvelopeSimple,
-  GithubLogo,
-  LinkedinLogo,
-} from "@phosphor-icons/react/dist/ssr";
+import { EnvelopeSimple, GithubLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
 import { Container } from "@/components/ui/Container";
 import { NAV_LINKS } from "@/constants/navigation";
 import { SOCIAL_LINKS } from "@/constants/social-links";
@@ -26,13 +21,20 @@ export function Footer() {
               Personal portfolio, blog, and digital space where I share projects, learning notes, and the process
               behind my work.
             </p>
-            <Link
-              href="mailto:hello@andika.dev"
-              className="inline-flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-xs text-zinc-300 transition-colors hover:border-zinc-500 hover:text-zinc-100"
-            >
-              Let&apos;s collaborate
-              <ArrowUpRight size={13} weight="bold" />
-            </Link>
+            <div className="flex flex-wrap gap-2">
+              <Link
+                href="/login"
+                className="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-xs text-zinc-300 transition-colors hover:border-zinc-500 hover:text-zinc-100"
+              >
+                Sign In
+              </Link>
+              <Link
+                href="/register"
+                className="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-xs text-zinc-300 transition-colors hover:border-zinc-500 hover:text-zinc-100"
+              >
+                Sign Up
+              </Link>
+            </div>
           </div>
 
           <div>

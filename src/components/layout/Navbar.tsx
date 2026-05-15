@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Show, SignInButton, UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import { NAV_LINKS } from "@/constants/navigation";
 import { Container } from "@/components/ui/Container";
@@ -28,7 +29,7 @@ export function Navbar() {
           className="justify-self-start text-sm font-semibold tracking-wide text-primary"
           onClick={() => setIsOpen(false)}
         >
-          <img className="h-16" src="images/letter-a-logo.png" alt="logo-andika" />
+          <img className="h-16" src="/images/letter-a-logo.png" alt="logo-andika" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
@@ -50,10 +51,15 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden justify-self-end md:block">
-          <Button size="sm" href="mailto:hello@andika.dev">
-            let&apos;s talk
-          </Button>
+        <div className="hidden justify-self-end md:flex md:items-center">
+          <Show when="signed-out">
+            <SignInButton mode="redirect" fallbackRedirectUrl="/admin" signUpFallbackRedirectUrl="/admin">
+              <Button size="sm">Sign In</Button>
+            </SignInButton>
+          </Show>
+          <Show when="signed-in">
+            <UserButton userProfileMode="navigation" userProfileUrl="/profile" />
+          </Show>
         </div>
 
         <Button
@@ -93,9 +99,18 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button className="mt-2" href="mailto:hello@andika.dev">
-              let&apos;s talk
-            </Button>
+            <div className="mt-2">
+              <Show when="signed-out">
+                <SignInButton mode="redirect" fallbackRedirectUrl="/admin" signUpFallbackRedirectUrl="/admin">
+                  <Button className="w-full">Sign In</Button>
+                </SignInButton>
+              </Show>
+              <Show when="signed-in">
+                <div className="flex justify-center">
+                  <UserButton userProfileMode="navigation" userProfileUrl="/profile" />
+                </div>
+              </Show>
+            </div>
           </nav>
         </Container>
       ) : null}

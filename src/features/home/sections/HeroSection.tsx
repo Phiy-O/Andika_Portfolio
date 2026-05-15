@@ -71,10 +71,10 @@ export function HeroSection() {
         <Reveal delay={0.08}>
           <div className="relative mx-auto w-full max-w-sm">
             <div className="pointer-events-none absolute -rotate-8 left-4 bottom-8 z-20 flex h-16 w-16 items-center justify-center">
-              <img className="h-14 w-14" src="overlays/python.png" alt="code-overlay" />
+              <img className="h-14 w-14" src="/overlays/python.png" alt="code-overlay" />
             </div>
             <div className="pointer-events-none absolute right-1 top-12 z-20 flex h-16 w-16 items-center justify-center">
-              <img className="h-16 w-16" src="overlays/code.png" alt="code-overlay" />
+              <img className="h-16 w-16" src="/overlays/code.png" alt="code-overlay" />
             </div>
 
             <div className="relative z-10 overflow-hidden rounded-3xl shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
